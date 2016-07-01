@@ -1,0 +1,68 @@
+@import url("resource:///org/gnome/builder/theme/fallback-shared.css");
+
+
+eggsearchbar box.search-bar {
+  background-color: @darker_theme_bg_color;
+  box-shadow: 0 4px 3px -5px @box_shadow_color inset,
+              0 -1px 0 @light_borders /*#a1a1a1*/ inset;
+}
+eggsearchbar:backdrop box.search-bar {
+  background-color: red; /*#d5d5d5;*/
+  box-shadow: none;
+}
+
+
+perspectiveswitcher {
+  background: shade(@theme_bg_color, 1.1); /*#f4f4f4;*/
+}
+perspectiveswitcher button {
+  color: shade(@theme_text_color, 2.2); /*#bebebe;*/
+}
+perspectiveswitcher button:checked,
+perspectiveswitcher button:checked:hover {
+  color: @theme_text_color; /*#2e3436;*/
+}
+perspectiveswitcher button:hover {
+  color: shade(@theme_text_color, 1.3); /*mix(#bebebe, #2e3436, 0.3);*/
+}
+
+pillbox {
+  background-color: @darker_theme_bg_color;
+  color: @theme_text_color;
+  border-radius: 3px;
+}
+
+layouttabbar {
+  background-color: @darker_theme_bg_color;
+  border-bottom: 1px solid @light_borders;
+  box-shadow: 0 4px 3px -5px @box_shadow_color inset;
+}
+layouttab {
+  border-bottom-color: @theme_selected_bg_color;
+  box-shadow: 0 4px 3px -5px @box_shadow_color inset;
+}
+layouttab:backdrop {
+  background-color: red; /*#efefef;*/
+  border-right-color: alpha(@borders, 0.5);
+  border-left-color: alpha(@borders, 0.5);
+}
+
+docktabstrip {
+  background-color: shade(@theme_bg_color, 0.9);
+  box-shadow: 0 4px 3px -5px @box_shadow_color inset,
+              0 -1px 0 @light_borders inset;
+}
+docktabstrip:backdrop {
+  box-shadow: 0 -1px 0 @light_borders inset;
+}
+docktabstrip docktab:checked {
+  box-shadow: 0 -2px 0 @theme_selected_bg_color inset;
+}
+
+entry.search-missing {
+  border-color: shade(@error_color, 0.8);
+}
+
+@define-color box_shadow_color @theme_bg_color; /* #aaa in Adwaita gnome-builder theme*/
+@define-color darker_theme_bg_color shade(@theme_bg_color, 0.9); /* #d6d6d6 */
+@define-color light_borders shade(@borders, 1.1); /* #a1a1a1 */
