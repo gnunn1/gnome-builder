@@ -32,6 +32,7 @@
     <file compressed="true" alias="Arc-shared.css">../../data/theme/Arc-shared.css</file>
 
     <file compressed="true" alias="fallback.css">../../data/theme/fallback.css</file>
+    <file compressed="true" alias="fallback-dark.css">../../data/theme/fallback-dark.css</file>
     <file compressed="true" alias="fallback-panels.css">../../data/theme/fallback-panels.css</file>
     <file compressed="true" alias="fallback-shared.css">../../data/theme/fallback-shared.css</file>
 

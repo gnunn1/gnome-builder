@@ -88,8 +88,12 @@ ide_css_provider_update (IdeCssProvider *self)
   if (!g_resources_get_info (resource_path, G_RESOURCE_LOOKUP_FLAGS_NONE, &len, &flags, NULL))
     {
       g_free (resource_path);
-      resource_path = g_strdup_printf ("%s/theme/fallback.css", self->base_path);
+      resource_path = g_strdup_printf ("%s/theme/fallback%s.css", 
+                                       self->base_path, 
+                                       prefer_dark_theme ? "-dark" : "");
     }
+
+  IDE_TRACE_MSG ("Loading css overrides \"%s\"", resource_path);
 
   /* Nothing to load */
   if (!g_resources_get_info (resource_path, G_RESOURCE_LOOKUP_FLAGS_NONE, &len, &flags, NULL))
